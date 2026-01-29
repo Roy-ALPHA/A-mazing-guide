@@ -13,7 +13,7 @@ lint:
 
 lint-strict:
 	flake8 .
-# 	mypy  maze/mazegen.py --strict
+	mypy . --strict
 install:
 	python3 -m venv venv
 	pip install .

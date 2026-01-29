@@ -128,11 +128,10 @@ def mlx_render(width, length, ENTRY, EXIT, out_file: str, is_perfect: bool,
             x_offset = 0
             for cell in row:
                 if cell._42_path is True:
-                    mlx1.mlx_put_image_to_window(k, win, image_42, x_offset, y_offset)
+                    mlx1.mlx_put_image_to_window(
+                        k, win, image_42, x_offset, y_offset)
                 x_offset += 40
             y_offset += 40
-
-
 
     directions = [down_img, up_img, right_img, left_img]
 
@@ -148,19 +147,15 @@ def mlx_render(width, length, ENTRY, EXIT, out_file: str, is_perfect: bool,
                                  EXIT[0] * 40 + 10,
                                  EXIT[1] * 40 + 10)
 
-
     def back_img():
         for y in range(0, length_pixel, bg_lenght):
             for x in range(0, width_pixel, bg_width):
                 mlx1.mlx_put_image_to_window(k, win, bg_img, x, y)
 
-
-
     pl_x = ENTRY[0] * 40 + 10
     pl_y = ENTRY[1] * 40 + 10
 
     def draw_path():
-        nonlocal pl_x, pl_y
         path = pathfinder(mz, (pl_x // 40, pl_y // 40), EXIT, width, length)
         direction_i = None
         CELL = 40
@@ -177,7 +172,8 @@ def mlx_render(width, length, ENTRY, EXIT, out_file: str, is_perfect: bool,
                     direction_i = 3
                 px = x * CELL + 10
                 py = y * CELL + 10
-                if (x, y) != ENTRY and (x, y) != EXIT and (x, y) != (pl_x // 40, pl_y // 40):
+                if ((x, y) != ENTRY and (x, y) != EXIT
+                   and (x, y) != (pl_x // 40, pl_y // 40)):
                     time.sleep(0.0001)
                     mlx1.mlx_put_image_to_window(k,
                                                  win,

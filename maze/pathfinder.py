@@ -1,10 +1,12 @@
 from collections import deque
 
+
 def init_path(maze):
     for row in maze:
         for cell in row:
             cell.BFSvisited = False
             cell.parent = None
+
 
 def pathfinder(maze, ENTRY, EXIT, WIDTH, HEIGHT):
     init_path(maze)
@@ -26,7 +28,8 @@ def pathfinder(maze, ENTRY, EXIT, WIDTH, HEIGHT):
         ]
 
         for d, dx, dy in directions:
-            if 0 <= dx < WIDTH and 0 <= dy < HEIGHT and d is False and maze[dy][dx].BFSvisited is False:
+            if (0 <= dx < WIDTH and 0 <= dy < HEIGHT
+               and d is False and maze[dy][dx].BFSvisited is False):
                 maze[dy][dx].BFSvisited = True
                 q.append((dx, dy))
                 maze[dy][dx].parent = (x, y)

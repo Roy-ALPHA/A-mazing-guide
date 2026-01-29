@@ -55,7 +55,6 @@ class MazeGenerator:
     def creat_maze_bakctracker_algo(self) -> None:
         entry = self.entry
         exit = self.exit
-        # print(exit)
         if (self.x < 9 or self.y < 9):
             str = "Warning: invalid path for 42 pathern.\n'we will \
 generat maze without 42 pathern'"
@@ -70,7 +69,6 @@ invalid (inside '42 path')")
     def creat_maze_prims_algo(self) -> None:
         entry = self.entry
         exit = self.exit
-        print(exit)
         if (self.x < 9 or self.y < 9):
             str = "Warning: invalid path \
 for 42 pathern.\n'we will generat maze without 42 pathern'"
